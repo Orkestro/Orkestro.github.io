@@ -1,6 +1,6 @@
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav navbar-right">
-        {% for menu_item in site.data.home.menu %}
+        {% for menu_item in site.data.menu %}
             <li>
                 <a class="page-scroll" href="/{% if menu_item.anchor %}#{% endif %}{{ menu_item.url }}">{{ menu_item.name }}</a>
             </li>
