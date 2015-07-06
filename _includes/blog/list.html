@@ -1,0 +1,6 @@
+<div class="container">
+    {% for post in site.data.blog.posts[include.section] %}
+        <h3><a href="/blog/{{ include.section }}/{{ post.name }}">{{ post.title }}</a></h3>
+        <div>{{ post.description }}</div>
+    {% endfor %}
+</div>

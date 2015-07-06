@@ -22,3 +22,8 @@
     color: #CC7832;
     font-weight: bold;
 }
+
+pre {
+    display: inline-block;
+    padding: 0;
+}

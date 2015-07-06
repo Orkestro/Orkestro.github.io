@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Блог
+title: Блог о Doctrine
 page_title:
   - type: var
     value: $Orkestro
@@ -11,19 +11,22 @@ page_title:
   - type: string
     value: "'"
   - type: folded
-    value: BlogSection
-    abbr: AppBundle:BlogSection
+    value: Blog
+    abbr: AppBundle:Blog
   - type: string
     value: "'"
   - value: )
   - value: ->
   - type: method
-    value: findAll
-  - value: ()
+    value: findAllBySection
+  - value: (
+  - type: string
+    value: "'doctrine'"
+  - value: )
   - type: semicolon
     value: ;
 ---
 
 {% include navigation_inner.html %}
 {% include blog/header.html %}
-{% include blog/sections.html %}
+{% include blog/list.html section="doctrine" %}

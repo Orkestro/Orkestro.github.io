@@ -1,1 +1,90 @@
-hello
+---
+layout: post
+title: Блог
+page_title:
+  - type: var
+    value: $Orkestro
+  - value: ->
+  - type: method
+    value: getRepository
+  - value: (
+  - type: string
+    value: "'"
+  - type: folded
+    value: Article
+    abbr: AppBundle:Article
+  - type: string
+    value: "'"
+  - value: )
+  - type: br
+  - value: ->
+  - type: method
+    value: findOneBySectionAndName
+  - value: (
+  - type: string
+    value: "'symfony'"
+  - type: semicolon
+    value: ", "
+  - type: string
+    value: "'tips-and-tricks'"
+  - value: )
+  - type: semicolon
+    value: ;
+---
+
+{% include navigation_inner.html %}
+{% include blog/header.html %}
+
+<div class="container">
+    <h2>Symfony. Советы и секреты</h2>
+    <p>
+        <a href="#named_assets">Именованные ресурсы</a>
+    </p>
+    <p id="named_assets">
+        <strong>Именованные ресурсы</strong><br />
+        Бывают случаи, когда необходимо включить в HTML-разметку несколько ресурсов. Например,
+        при использовании <a target="_blank" href="http://getbootstrap.com/">Bootstrap</a> или
+        <a target="_blank" href="http://jquery.com/">JQuery</a>.<br />
+        Типичный подход, используемый в данном случае выглядит следующим образом:
+    </p>
+    <p>
+        {% raw %}
+<pre><code class="xml">{% javascripts
+    '@AppBundle/Resources/public/js/jquery.js'
+    '@AppBundle/Resources/public/js/jquery.ui.js'
+    '@AppBundle/Resources/public/js/bootstrap.js'
+    '@AppBundle/Resources/public/js/*' %}
+        &lt;script src="{{ asset_url }}"&gt;&lt;/script&gt;
+{% endjavascripts %}</code></pre>
+        {% endraw %}
+    </p>
+    <p>
+        Но гораздо удобнее именовать часто подключаемые ресурсы.<br />
+        Это делается так:
+    </p>
+    <p>
+{% raw %}
+<pre><code class="bash"># app/config/config.yml
+assetic:
+  assets:
+    bootstrap_js: # название именованного ресурса
+      inputs:
+        - '@AppBundle/Resources/public/js/jquery.js'
+        - '@AppBundle/Resources/public/js/jquery.ui.js'
+        - '@AppBundle/Resources/public/js/bootstrap.js'
+</code></pre>
+{% endraw %}
+    </p>
+    <p>
+        И теперь мы можем спокойно использовать наш именованный ресурс в шаблоне:
+    </p>
+    <p>
+{% raw %}
+<pre><code class="xml">{% javascripts
+    '@bootstrap_js'
+    '@AppBundle/Resources/public/js/*' %}
+    &lt;script src="{{ asset_url }}"&gt;&lt;/script&gt;
+{% endjavascripts %}</code></pre>
+{% endraw %}
+    </p>
+</div>

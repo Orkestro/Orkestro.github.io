@@ -1,21 +1,32 @@
 ---
 layout: default
+title: Блог о Symfony
+page_title:
+  - type: var
+    value: $Orkestro
+  - value: ->
+  - type: method
+    value: getRepository
+  - value: (
+  - type: string
+    value: "'"
+  - type: folded
+    value: Blog
+    abbr: AppBundle:Blog
+  - type: string
+    value: "'"
+  - value: )
+  - value: ->
+  - type: method
+    value: findAllBySection
+  - value: (
+  - type: string
+    value: "'symfony'"
+  - value: )
+  - type: semicolon
+    value: ;
 ---
-<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand page-scroll" href="#page-top">Orkestro</a>
-        </div>
-        {% include home/menu.html %}
-    </div>
-</nav>
 
-<div id="blog"></div>
-
+{% include navigation_inner.html %}
 {% include blog/header.html %}
+{% include blog/list.html section="symfony" %}

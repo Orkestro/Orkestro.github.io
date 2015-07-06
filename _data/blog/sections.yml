@@ -1,2 +1,4 @@
 - name: symfony
   title: Symfony
+- name: doctrine
+  title: Doctrine

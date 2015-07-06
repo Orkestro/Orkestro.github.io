@@ -1,11 +1,18 @@
 {% capture cache %}
 {% for title_item in page.page_title %}
-{% if "var" == title_item.type %}<span class="var">{{ title_item.value }}</span>{% continue %}{% endif %}
-{% if "method" == title_item.type %}<span class="method">{{ title_item.value }}</span>{% continue %}{% endif %}
-{% if "string" == title_item.type %}<span class="string">{{ title_item.value }}</span>{% continue %}{% endif %}
-{% if "folded" == title_item.type %}<span class="folded">{{ title_item.value }}</span>{% continue %}{% endif %}
-{% if "semicolon" == title_item.type %}<span class="semicolon">{{ title_item.value }}</span>{% continue %}{% endif %}
+{% if nil != title_item.abbr %}
+<abbr title="{{ title_item.abbr }}">
+{% endif %}
+{% if "br" == title_item.type %}<br />{% endif %}
+{% if "var" == title_item.type %}<span class="var">{{ title_item.value }}</span>{% endif %}
+{% if "method" == title_item.type %}<span class="method">{{ title_item.value }}</span>{% endif %}
+{% if "string" == title_item.type %}<span class="string">{{ title_item.value }}</span>{% endif %}
+{% if "folded" == title_item.type %}<span class="folded">{{ title_item.value }}</span>{% endif %}
+{% if "semicolon" == title_item.type %}<span class="semicolon">{{ title_item.value }}</span>{% endif %}
 {% if nil == title_item.type %}{{ title_item.value }}{% endif %}
+{% if nil != title_item.abbr %}
+</abbr>
+{% endif %}
 {% endfor %}
 {% endcapture %}
 {{ cache|strip_newlines }}
