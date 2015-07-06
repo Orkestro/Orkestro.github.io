@@ -1,0 +1,17 @@
+<header>
+    {% for header in site.data.home.header %}
+        <input type="hidden" name="header-{{ header.name }}" value="{{ header.title }}">
+        <input type="hidden" name="description-{{ header.name }}" value="{{ header.description }}">
+        <input type="hidden" name="button_title-{{ header.name }}" value="{{ header.button_title }}">
+        <input type="hidden" name="button_url-{{ header.name }}" value="{% if header.button_url_anchor %}#{% endif %}{{ menu_item.url }}{{ header.button_url }}">
+    {% endfor %}
+
+    <div class="header-content">
+        <div class="header-content-inner">
+            <h1></h1>
+            <hr>
+            <p class="description"></p>
+            <a href="#" class="btn btn-primary btn-xl page-scroll"></a>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,60 @@
+- name: development
+  title: Разработка
+  items:
+    - name: symfony
+      title: Symfony 2, Symfony
+      description:
+        - Обучение
+        - Подготовка к сертификации сотрудников
+        - Миграция на LTS-версии фреймворка
+        - Перевод существующего проекта на Symfony 2
+
+    - name: laravel
+      title: Laravel
+      description:
+        - Обучение
+        - Миграция на LTS-версии фреймворка
+        - Перевод существующего проекта на Laravel
+
+    - name: zend
+      title: Zend Framework 2
+      description:
+        - Обучение
+        - Миграция на LTS-версии фреймворка
+        - Перевод существующего проекта на Zend Framework 2
+
+- name: databases
+  title: Базы данных
+  items:
+    - name: mysql
+      title: MySQL, Percona, MariaDB
+      description:
+        - Обучение
+
+    - name: postgresql
+      title: PostgreSQL
+      description:
+        - Обучение
+
+    - name: hadoop
+      title: Hadoop
+      description:
+        - Обучение
+
+- name: devops
+  title: DevOps
+  items:
+    - name: aws
+      title: Amazon Web Services
+      description:
+        - Обучение
+
+    - name: chef
+      title: Chef, SaltStack
+      description:
+        - Обучение
+
+    - name: teamcity
+      title: TeamCity, Jenkins, PHPCI
+      description:
+        - Обучение

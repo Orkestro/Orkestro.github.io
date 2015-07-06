@@ -1,0 +1,34 @@
+---
+layout: default
+title: Блог
+page_title:
+  - type: var
+    value: $Orkestro
+  - value: ->
+  - type: method
+    value: getRepository
+  - value: (
+  - type: string
+    value: "'"
+  - type: folded
+    value: Blog
+  - type: string
+    value: "'"
+  - value: )
+  - value: ->
+  - type: method
+    value: findAll
+  - value: ()
+  - type: semicolon
+    value: ;
+---
+
+{% include navigation_inner.html %}
+{% include blog/header.html %}
+
+<!--{% for blog_section in site.data.blog.sections %}-->
+    <!--<div>-->
+        <!--<img src="/img/knowledge/development/{{ blog_section.name }}.jpg" />-->
+        <!--<div class="title">{{ blog_section.title }}</div>-->
+    <!--</div>-->
+<!--{% endfor %}-->
